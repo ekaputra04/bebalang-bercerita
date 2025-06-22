@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
+import { Spotlight } from "@/components/ui/spotlight";
+import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -57,11 +59,15 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased mx-auto max-w-3xl py-12 sm:py-24 px-6",
+          "min-h-screen bg-background font-sans antialiased pb-32 mx-auto max-w-3xl py-12 sm:py-24 px-6",
           fontSans.variable
         )}>
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
+            <Spotlight
+              className="-top-40 md:-top-60 -left-20 md:-left-28"
+              fill="green"
+            />
             {children}
             <Navbar />
           </TooltipProvider>

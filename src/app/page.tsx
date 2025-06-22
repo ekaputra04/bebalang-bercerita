@@ -41,20 +41,22 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <Header text="Bidang" />
           </BlurFade>
-          {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
-              <ResumeCard
+          <div className="space-y-6">
+            {DATA.work.map((work, id) => (
+              <BlurFade
                 key={work.company}
-                logoUrl={work.logoUrl}
-                altText={work.company}
-                title={work.company}
-                subtitle={work.title}
-                description={work.description}
-              />
-            </BlurFade>
-          ))}
+                delay={BLUR_FADE_DELAY * 6 + id * 0.05}>
+                <ResumeCard
+                  key={work.company}
+                  logoUrl={work.logoUrl}
+                  altText={work.company}
+                  title={work.company}
+                  subtitle={work.title}
+                  description={work.description}
+                />
+              </BlurFade>
+            ))}
+          </div>
         </div>
       </section>
       <section id="projects">

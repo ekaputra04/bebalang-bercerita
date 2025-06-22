@@ -1,8 +1,8 @@
 import Header from "@/components/header";
 import HeroSection from "@/components/hero-section";
+import ImageOverlay from "@/components/image-overlay";
 import BlurFade from "@/components/magicui/blur-fade";
 import { getBlogPosts } from "@/data/blog";
-import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = {
@@ -19,11 +19,11 @@ export default async function BlogPage() {
     <div className="">
       <HeroSection />
       <section className="mt-16">
-        <BlurFade delay={BLUR_FADE_DELAY}>
+        <BlurFade delay={BLUR_FADE_DELAY} className="mb-8">
           <Header text="Artikel" />
         </BlurFade>
 
-        <div className="gap-4 grid grid-cols-2">
+        <div className="gap-4 grid grid-cols-1 md:grid-cols-2">
           {posts
             .sort((a, b) => {
               if (
@@ -40,15 +40,7 @@ export default async function BlogPage() {
                   className="flex flex-col space-y-1 mb-4"
                   href={`/blog/${post.slug}`}>
                   <div className="flex flex-col w-full">
-                    <div className="w-full object-center object-cover aspect-video overflow-hidden">
-                      <Image
-                        width={800}
-                        height={400}
-                        alt={post.metadata.title}
-                        src={post.metadata.image || "/images/logo.png"}
-                        className="rounded-lg w-full h-full object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
-                      />
-                    </div>
+                    <ImageOverlay post={post} />
                     <p className="mt-4 tracking-tight">{post.metadata.title}</p>
                     <p className="h-6 text-muted-foreground text-xs">
                       {post.metadata.publishedAt}

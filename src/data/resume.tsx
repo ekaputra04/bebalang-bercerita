@@ -1,9 +1,17 @@
-import { HomeIcon, Instagram, Mail, NotebookIcon, Youtube } from "lucide-react";
+import { Icons } from "@/components/icons";
+import {
+  GalleryThumbnails,
+  HomeIcon,
+  Instagram,
+  Mail,
+  NotebookIcon,
+  Youtube,
+} from "lucide-react";
 
 export const DATA = {
-  name: "KKN PPM XXXI UNUD",
+  name: "KKN Bebalang 2025",
   initials: "DV",
-  url: "https://dillion.io",
+  url: "https://bebalang-berkelana.vercel.app",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description: "Desa Bebalang, Bangli, Bali, Indonesia.",
@@ -25,7 +33,8 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/blog", icon: NotebookIcon, label: "Artikel" },
+    { href: "/galeri", icon: GalleryThumbnails, label: "Galeri" },
   ],
   contact: {
     email: "kknbebalang2025@gmail.com",
@@ -35,6 +44,12 @@ export const DATA = {
         name: "Instagram",
         url: "https://www.instagram.com/kknbebalang2025",
         icon: Instagram,
+        navbar: true,
+      },
+      Tiktok: {
+        name: "Tiktok",
+        url: "https://www.tiktok.com/@kknbebalang2025",
+        icon: Icons.tiktok,
         navbar: true,
       },
       Email: {

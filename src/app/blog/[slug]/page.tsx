@@ -8,6 +8,7 @@ import Image from "next/image"; // Added for optimized image loading
 import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
+import ImageOverlay from "@/components/image-overlay";
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -111,15 +112,8 @@ export default async function Blog({
           </Suspense>
         </div>
         {post.metadata.image && (
-          <div className="mb-8">
-            <Image
-              src={post.metadata.image}
-              alt={`Cover image for ${post.metadata.title}`}
-              width={650}
-              height={400}
-              className="rounded-lg w-full h-auto object-cover"
-              priority
-            />
+          <div className="mb-16">
+            <ImageOverlay post={post} />
           </div>
         )}
         <article
