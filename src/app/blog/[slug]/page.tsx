@@ -4,6 +4,7 @@ import { formatDate } from "@/lib/utils";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
+import Image from "next/image"; // Added for optimized image loading
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -65,7 +66,7 @@ export default async function Blog({
   }
 
   return (
-    <section id="blog">
+    <section id="blog" className="mx-auto max-w-3xl">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -88,16 +89,28 @@ export default async function Blog({
           }),
         }}
       />
-      <h1 className="max-w-[650px] font-medium text-2xl tracking-tighter title">
+      <h1 className="font-medium text-2xl tracking-tighter title">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 max-w-[650px] text-sm">
+      <div className="flex justify-between items-center mt-2 mb-4 text-sm">
         <Suspense fallback={<p className="h-5" />}>
           <p className="text-neutral-600 dark:text-neutral-400 text-sm">
             {formatDate(post.metadata.publishedAt)}
           </p>
         </Suspense>
       </div>
+      {post.metadata.image && (
+        <div className="mb-8">
+          <Image
+            src={post.metadata.image}
+            alt={`Cover image for ${post.metadata.title}`}
+            width={650}
+            height={400}
+            className="rounded-lg w-full h-auto object-cover"
+            priority
+          />
+        </div>
+      )}
       <article
         className="dark:prose-invert prose"
         dangerouslySetInnerHTML={{ __html: post.source }}></article>

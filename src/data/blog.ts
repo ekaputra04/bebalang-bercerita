@@ -6,6 +6,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+import remarkImages from "remark-images";
 import { unified } from "unified";
 
 type Metadata = {
@@ -23,9 +24,9 @@ export async function markdownToHTML(markdown: string) {
   const p = await unified()
     .use(remarkParse)
     .use(remarkGfm)
+    .use(remarkImages)
     .use(remarkRehype)
     .use(rehypePrettyCode, {
-      // https://rehype-pretty.pages.dev/#usage
       theme: {
         light: "min-light",
         dark: "min-dark",
@@ -45,7 +46,7 @@ export async function getPost(slug: string) {
   const content = await markdownToHTML(rawContent);
   return {
     source: content,
-    metadata,
+    metadata: metadata as Metadata,
     slug,
   };
 }
@@ -57,11 +58,11 @@ async function getAllPosts(dir: string) {
       let slug = path.basename(file, path.extname(file));
       let { metadata, source } = await getPost(slug);
       return {
-        metadata,
+        metadata: metadata as Metadata,
         slug,
         source,
       };
-    }),
+    })
   );
 }
 
