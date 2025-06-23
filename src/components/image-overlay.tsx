@@ -8,7 +8,7 @@ export default function ImageOverlay({
   post: { metadata: { title: string; image?: string } };
 }) {
   return (
-    <div className="relative w-full object-center object-cover aspect-video overflow-hidden">
+    <div className="relative rounded-t-lg w-full object-center object-cover aspect-video overflow-hidden">
       <Image
         width={2000}
         height={1000}

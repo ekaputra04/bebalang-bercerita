@@ -32,7 +32,9 @@ export const ResumeCard = ({
   };
 
   return (
-    <div className="block cursor-pointer" onClick={() => handleClick()}>
+    <div
+      className="block bg-transparent cursor-pointer"
+      onClick={() => handleClick()}>
       <Card className="flex">
         <div className="flex-none">
           <Avatar className="bg-muted-background dark:bg-foreground m-auto border size-12">
@@ -47,7 +49,7 @@ export const ResumeCard = ({
         <div className="group flex-col flex-grow items-center ml-4">
           <CardHeader>
             <div className="flex justify-between items-center gap-x-2 text-base">
-              <h3 className="inline-flex justify-center items-center font-semibold text-xl leading-none">
+              <h3 className="inline-flex justify-center items-center font-semibold text-lg lg:text-xl leading-none">
                 {title}
 
                 <ChevronRightIcon
@@ -72,7 +74,7 @@ export const ResumeCard = ({
                 duration: 0.7,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-2 text-muted-foreground text-xs sm:text-sm text-justify">
+              className="bg-transparent mt-2 text-muted-foreground text-xs sm:text-sm text-justify">
               {description}
             </motion.div>
           )}

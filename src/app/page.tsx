@@ -73,7 +73,7 @@ export default function Page() {
           </BlurFade>
         </div>
 
-        <div className="gap-3 grid grid-cols-1 sm:grid-cols-2 mx-auto max-w-[800px]">
+        <div className="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto w-full">
           {DATA.members.map((member, id) => (
             <BlurFade
               key={member.title}
