@@ -11,7 +11,7 @@ import {
 export const DATA = {
   name: "KKN Bebalang 2025",
   initials: "DV",
-  url: "https://bebalang-berkelana.vercel.app",
+  url: "https://bebalang-bercerita.vercel.app",
   location: "San Francisco, CA",
   locationLink: "https://www.google.com/maps/place/sanfrancisco",
   description: "Desa Bebalang, Bangli, Bali, Indonesia.",
