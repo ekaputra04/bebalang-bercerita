@@ -31,7 +31,7 @@ export function MemberCard({ title, description, image }: Props) {
           className="w-full h-fit object-cover object-top overflow-hidden"
         />
       )}
-      <CardHeader className="px-4 py-2">
+      {/* <CardHeader className="px-4 py-2">
         <div className="space-y-1">
           <CardTitle className="mt-1 text-base">{title}</CardTitle>
         </div>
@@ -41,7 +41,7 @@ export function MemberCard({ title, description, image }: Props) {
           {description}
         </Markdown>
       </CardContent>
-      <CardFooter></CardFooter>
+      <CardFooter></CardFooter> */}
     </Card>
   );
 }

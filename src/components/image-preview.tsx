@@ -23,7 +23,7 @@ export default function ImagePreview({ images }: { images: string[] }) {
 
   return (
     <div>
-      <div className="gap-4 space-y-4 columns-1 sm:columns-2 lg:columns-3 p-4">
+      <div className="gap-4 grid grid-cols-2 md:grid-cols-3 p-4">
         {images.map((image) => (
           <BlurFade key={image}>
             <div
@@ -40,7 +40,7 @@ export default function ImagePreview({ images }: { images: string[] }) {
           </BlurFade>
         ))}
       </div>
-      {isOpen && (
+      {/* {isOpen && (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogContent className="max-h-[80vh] overflow-auto">
             {selectedImage && (
@@ -56,7 +56,7 @@ export default function ImagePreview({ images }: { images: string[] }) {
             )}
           </DialogContent>
         </Dialog>
-      )}
+      )} */}
     </div>
   );
 }

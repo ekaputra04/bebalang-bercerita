@@ -7,7 +7,6 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import { Spotlight } from "@/components/ui/spotlight";
-import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
 import { ParticlesBackground } from "@/components/particles-bg";
 
 const fontSans = FontSans({
@@ -18,8 +17,8 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: DATA.name,
-    template: `%s | ${DATA.name}`,
+    default: DATA.title,
+    template: `%s | ${DATA.title}`,
   },
   description: DATA.description,
   openGraph: {
@@ -60,7 +59,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans pb-32 mx-auto max-w-3xl pt-12  px-6 isolate",
+          "isolate bg-background mx-auto px-6 pt-12 pb-32 max-w-3xl min-h-screen font-sans",
           fontSans.variable
         )}>
         <ThemeProvider attribute="class" defaultTheme="light">

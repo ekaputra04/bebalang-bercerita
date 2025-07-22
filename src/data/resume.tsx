@@ -9,7 +9,8 @@ import {
 } from "lucide-react";
 
 export const DATA = {
-  name: "KKN Bebalang 2025",
+  title: "KKN Bebalang 2025",
+  name: "KKN PPM XXXI UNUD",
   initials: "DV",
   url: "https://bebalang-bercerita.vercel.app",
   location: "San Francisco, CA",
@@ -109,17 +110,92 @@ export const DATA = {
     {
       title: "Kordes",
       description: "Deskripsi kordes",
-      image: "/images/profil.png",
+      image: "/images/profil/1.png",
     },
     {
       title: "Wakordes",
       description: "Deskripsi kordes",
-      image: "/images/profil.png",
+      image: "/images/profil/2.png",
     },
     {
       title: "Anggota",
       description: "Deskripsi kordes",
-      image: "/images/profil.png",
+      image: "/images/profil/3.png",
+    },
+    {
+      title: "Kordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/4.png",
+    },
+    {
+      title: "Wakordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/5.png",
+    },
+    {
+      title: "Anggota",
+      description: "Deskripsi kordes",
+      image: "/images/profil/6.png",
+    },
+    {
+      title: "Kordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/7.png",
+    },
+    {
+      title: "Wakordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/8.png",
+    },
+    {
+      title: "Anggota",
+      description: "Deskripsi kordes",
+      image: "/images/profil/9.png",
+    },
+    {
+      title: "Kordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/10.png",
+    },
+    {
+      title: "Wakordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/11.png",
+    },
+    {
+      title: "Anggota",
+      description: "Deskripsi kordes",
+      image: "/images/profil/12.png",
+    },
+    {
+      title: "Kordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/13.png",
+    },
+    {
+      title: "Wakordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/14.png",
+    },
+    {
+      title: "Anggota",
+      description: "Deskripsi kordes",
+      image: "/images/profil/15.png",
+    },
+    {
+      title: "Kordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/16.png",
+    },
+    {
+      title: "Wakordes",
+      description: "Deskripsi kordes",
+      image: "/images/profil/17.png",
+    },
+    {
+      title: "Anggota",
+      description: "Deskripsi kordes",
+      image: "/images/profil/18.png",
     },
   ],
 } as const;

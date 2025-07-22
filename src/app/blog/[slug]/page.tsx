@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeftIcon } from "lucide-react";
 import Link from "next/link";
 import ImageOverlay from "@/components/image-overlay";
+import { DynamicDate } from "@/components/dynamic-date";
 
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
@@ -107,7 +108,8 @@ export default async function Blog({
         <div className="flex justify-between items-center mt-2 mb-4 text-sm">
           <Suspense fallback={<p className="h-5" />}>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm">
-              {formatDate(post.metadata.publishedAt)}
+              {/* {formatDate(post.metadata.publishedAt)} */}
+              <DynamicDate date={post.metadata.publishedAt} />
             </p>
           </Suspense>
         </div>

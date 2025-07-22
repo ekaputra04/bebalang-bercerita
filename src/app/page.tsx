@@ -17,7 +17,7 @@ export default function Page() {
         <div className="w-full h-fit object-cover overflow-hidden">
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
             <Image
-              src="/images/soon.png"
+              src="/images/rahajeng-rauh.png"
               alt="Hero Background"
               width={1920}
               height={1080}
@@ -62,18 +62,18 @@ export default function Page() {
       <section id="projects">
         <div className="py-12 w-full">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <Header text="Anggota" />
+            <Header text="Struktur" />
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <Markdown className="dark:prose-invert max-w-full font-sans text-muted-foreground text-sm text-center text-pretty prose">
               {
-                "Bersatu kita teguh, bercerai kita runtuh. Izinkan kami memperkenalkan anggota KKN PPM Bebalang 2025."
+                "Bersatu kita teguh, bercerai kita runtuh. Izinkan kami memperkenalkan struktur KKN PPM Bebalang 2025."
               }
             </Markdown>
           </BlurFade>
         </div>
 
-        <div className="gap-3 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto w-full">
+        <div className="gap-3 grid grid-cols-2 md:grid-cols-3 mx-auto w-full">
           {DATA.members.map((member, id) => (
             <BlurFade
               key={member.title}
