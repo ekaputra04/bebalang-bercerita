@@ -71,11 +71,7 @@ export default function BlogPage({ posts }: BlogPageProps) {
               onClick={handleLoadMore}
               disabled={isLoading}
               variant="outline"
-              className={`px-4 py-2 transition ${
-                isLoading
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-gray-100"
-              }`}>
+              className={`px-4 py-2 transition`}>
               {isLoading ? (
                 <div className="flex items-center gap-2">
                   <LoadingIcon />

@@ -16,13 +16,15 @@ export default function Page() {
       <section>
         <div className="w-full h-fit object-cover overflow-hidden">
           <BlurFade delay={BLUR_FADE_DELAY * 2}>
-            <Image
-              src="/images/rahajeng-rauh.png"
-              alt="Hero Background"
-              width={1920}
-              height={1080}
-              className="w-full h-auto object-cover"
-            />
+            <div className="p-2">
+              <Image
+                src="/images/rahajeng-rauh.png"
+                alt="Hero Background"
+                width={1920}
+                height={1080}
+                className="rounded-lg w-full h-auto object-cover"
+              />
+            </div>
           </BlurFade>
         </div>
       </section>
