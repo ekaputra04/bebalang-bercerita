@@ -1,34 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import BlurFade from "./magicui/blur-fade";
-import { useState } from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Button } from "./ui/button";
+import LoadingIcon from "./loading-icon";
+import { RefreshCw } from "lucide-react";
 
 export default function ImagePreview({ images }: { images: string[] }) {
-  const [selectedImage, setSelectedImage] = useState<string>();
-  const [isOpen, setIsOpen] = useState(false);
+  const [displayCount, setDisplayCount] = useState(6);
+  const [isLoading, setIsLoading] = useState(false);
+  const imagesPerPage = 6;
 
-  const handleImageClick = (image: string) => {
-    setSelectedImage(image);
-    setIsOpen(true);
+  const handleLoadMore = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setDisplayCount((prevCount) => prevCount + imagesPerPage);
+      setIsLoading(false);
+    }, 500);
   };
+
+  const displayedImages = images.slice(0, displayCount);
 
   return (
     <div>
-      <div className="gap-4 grid grid-cols-2 md:grid-cols-3 p-4">
-        {images.map((image) => (
+      <div className="gap-4 grid grid-cols-2 md:grid-cols-3">
+        {displayedImages.map((image) => (
           <BlurFade key={image}>
-            <div
-              className="shadow rounded overflow-hidden break-inside-avoid"
-              onClick={() => handleImageClick(image)}>
+            <div className="shadow rounded overflow-hidden break-inside-avoid">
               <Image
                 src={`/galeri/${image}`}
                 alt={image}
@@ -40,23 +39,26 @@ export default function ImagePreview({ images }: { images: string[] }) {
           </BlurFade>
         ))}
       </div>
-      {/* {isOpen && (
-        <Dialog open={isOpen} onOpenChange={setIsOpen}>
-          <DialogContent className="max-h-[80vh] overflow-auto">
-            {selectedImage && (
-              <div className="relative flex justify-center w-full max-h-[80vh]">
-                <Image
-                  src={`/galeri/${selectedImage}`}
-                  alt={selectedImage}
-                  width={800}
-                  height={600}
-                  className="rounded-lg w-auto h-auto max-h-full"
-                />
+      {displayCount < images.length && (
+        <div className="mt-6 text-center">
+          <Button
+            onClick={handleLoadMore}
+            disabled={isLoading}
+            variant={"outline"}>
+            {isLoading ? (
+              <div className="flex items-center gap-2">
+                <LoadingIcon />
+                <p>Loading...</p>
+              </div>
+            ) : (
+              <div className="flex items-center gap-2">
+                <RefreshCw className="w-4 h-4" />
+                <p>Load more</p>
               </div>
             )}
-          </DialogContent>
-        </Dialog>
-      )} */}
+          </Button>
+        </div>
+      )}
     </div>
   );
 }
