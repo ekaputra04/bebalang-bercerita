@@ -8,13 +8,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import remarkImages from "remark-images";
 import { unified } from "unified";
-
-type Metadata = {
-  title: string;
-  publishedAt: string;
-  summary: string;
-  image?: string;
-};
+import { Metadata } from "@/types/types";
 
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
